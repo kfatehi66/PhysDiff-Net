@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use the code or dataset in this repository in your research, please cite the paper below."
+title: "PhysDiff-Net: Physics-Guided Diffusion for Synthetic Wireless Traffic Generation"
+type: software
+authors:
+  - family-names: "Fatehi"
+    given-names: "Kavan"
+    orcid: "https://orcid.org/0000-0003-2278-7804"
+  - family-names: "Rahmani Ghourtani"
+    given-names: "Mostafa"
+  - family-names: "Grace"
+    given-names: "David"
+  - family-names: "Arvaneh"
+    given-names: "Mahnaz"
+  - family-names: "Leung"
+    given-names: "Kin K."
+  - family-names: "Ahmadi"
+    given-names: "Hamed"
+repository-code: "https://github.com/kfatehi66/PhysDiff-Net"
+preferred-citation:
+  type: article
+  title: "PhysDiff-Net: Physics-Guided Diffusion for Synthetic Wireless Traffic Generation"
+  authors:
+    - family-names: "Fatehi"
+      given-names: "Kavan"
+      orcid: "https://orcid.org/0000-0003-2278-7804"
+    - family-names: "Rahmani Ghourtani"
+      given-names: "Mostafa"
+    - family-names: "Grace"
+      given-names: "David"
+    - family-names: "Arvaneh"
+      given-names: "Mahnaz"
+    - family-names: "Leung"
+      given-names: "Kin K."
+    - family-names: "Ahmadi"
+      given-names: "Hamed"
+  journal: "IEEE Transactions on Machine Learning in Communications and Networking"
+  year: 2026
