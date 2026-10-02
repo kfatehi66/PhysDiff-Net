@@ -40,4 +40,4 @@ K. Fatehi, M. Rahmani Ghourtani, D. Grace, M. Arvaneh, K. K. Leung, and H. Ahmad
 
 ## Acknowledgement
 
-This work was supported in part by the UK Engineering and Physical Sciences Research Council (EPSRC), Hub for All Spectrum Communications, O-RAN intelligent adaptive load balancing and efficiency in highly dense deployments (ORLANDO) project, under Grant EP/X040569/1.
+This work was supported in part by the UK Engineering and Physical Sciences Research Council (EPSRC), Hub for All Spectrum Communications, O-RAN intelligent adaptive load balancing and efficiency in highly dense deployments (Orlando) project, under Grant No. EP/X040569/1.
