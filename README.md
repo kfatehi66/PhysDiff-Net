@@ -23,7 +23,7 @@ The release will include:
 
 ## Citation
 
-If you use the code or dataset in this repository in your research, please cite the following paper:
+If you use the code in this repository in your research, please cite the following paper:
 
 K. Fatehi, M. Rahmani Ghourtani, D. Grace, M. Arvaneh, K. K. Leung, and H. Ahmadi, “PhysDiff-Net: Physics-Guided Diffusion for Synthetic Wireless Traffic Generation,” *IEEE Transactions on Machine Learning in Communications and Networking*, 2026.
 
