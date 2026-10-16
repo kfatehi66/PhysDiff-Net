@@ -2,8 +2,6 @@
 
 This repository hosts the code release for the paper *PhysDiff-Net: Physics-Guided Diffusion for Synthetic Wireless Traffic Generation*, accepted for publication in the IEEE Transactions on Machine Learning in Communications and Networking.
 
-> **Status:** the code, trained model, and evaluation scripts are being prepared for release. This page will be updated when they are available.
-
 ## Overview
 
 PhysDiff-Net is a conditional denoising diffusion model that generates synthetic access-point-level WiFi telemetry conditioned on the hour of day. The denoising network is a 6-layer Transformer encoder (5.62M parameters) in which each access point's feature vector forms one token. The model was trained on measurements collected over about five weeks at 10-second resolution from 11 access points in a municipal WiFi deployment in Blackpool, UK, represented by 29 engineered features per access point (load, traffic, signal quality, mobility, temporal, and spatial descriptors).
