@@ -1,0 +1,51 @@
+# ORLANDO: Synthetic WiFi Data Generation
+# Python dependencies for PhysDiff-Net
+
+# Deep Learning
+torch>=2.0
+torchvision
+torchaudio
+
+# Numerical Computing
+numpy
+pandas
+scipy
+scikit-learn
+
+# Configuration
+pyyaml
+omegaconf
+
+# Visualization
+matplotlib
+seaborn
+plotly
+
+# Progress and Logging
+tqdm
+tensorboard
+wandb
+
+# Data Storage
+h5py
+
+# Tensor Operations
+einops
+
+# Jupyter
+jupyter
+jupyterlab
+ipywidgets
+
+# Testing
+pytest
+pytest-cov
+
+# Code Quality
+black
+flake8
+isort
+
+# Utilities
+python-dateutil
+pytz

@@ -1,0 +1,84 @@
+# PhysDiff-Net V5 Training Configuration
+# ==============================================
+# Key changes from V4:
+# - Concatenation hour conditioning (not additive)
+# - Auxiliary hour prediction loss
+# - PCGrad for gradient surgery
+# - NO LR warm restarts
+# ==============================================
+
+# ===== Data =====
+train_data: "data/processed/train_normalized.npz"
+val_data: "data/processed/val_normalized.npz"
+
+# ===== Model Architecture =====
+num_features: 29          # Features per AP
+seq_len: 360              # Time steps per window
+hidden_dim: 256           # Transformer hidden dimension
+num_layers: 6             # Number of transformer layers
+num_heads: 8              # Attention heads
+dropout: 0.1              # Dropout rate
+
+# Hour conditioning (V5 KEY CHANGE: concatenation)
+hour_dim: 64              # Hour embedding dimension
+num_hours: 24             # Number of hours
+use_hybrid_conditioning: false  # Use hybrid (embedding + sinusoidal)
+
+# AP conditioning
+num_aps: 11               # Number of access points
+ap_dim: 32                # AP embedding dimension
+
+# Diffusion
+num_timesteps: 1000       # Total diffusion steps
+cfg_drop_prob: 0.3        # CFG dropout probability
+
+# ===== Training =====
+num_epochs: 600           # Total training epochs
+batch_size: 64            # Batch size
+num_workers: 4            # Data loading workers
+
+# Optimizer
+learning_rate: 0.0001     # Initial learning rate
+min_lr: 0.000001          # Minimum learning rate
+weight_decay: 0.01        # AdamW weight decay
+
+# Scheduler - NO WARM RESTARTS (caused V4 collapse)
+scheduler_type: "cosine_annealing"
+warm_restarts: false
+
+# ===== Loss Weights =====
+lambda_physics: 0.1       # Physics constraint weight
+lambda_hour: 0.5          # Auxiliary hour loss weight (V5 KEY)
+lambda_variance: 0.1      # Variance preservation weight
+lambda_kl: 0.01           # KL divergence weight
+lambda_contrastive: 0.1   # Hour contrastive loss weight
+
+# Physics warmup
+physics_warmup_epochs: 100  # Epochs before full physics loss
+
+# ===== PCGrad (V5 KEY CHANGE) =====
+use_pcgrad: true          # Enable gradient surgery
+pcgrad_reduction: "sum"   # How to combine projected gradients
+
+# ===== Evaluation =====
+eval_every: 25            # Evaluate every N epochs
+num_eval_samples: 1000    # Samples for evaluation
+cfg_scale: 7.5            # Classifier-free guidance scale
+progressive_cfg: true     # Reduce CFG during generation
+
+# Early stopping
+early_stop_patience: 100  # Stop if no improvement for N epochs
+
+# ===== Feature Indices =====
+# Based on feature_names from data:
+# ['ue_count', 'active_ue_count', 'idle_ue_ratio', 'mobility_ue_count',
+#  'total_bytes', 'total_packets', 'avg_packet_size', 'retransmission_rate',
+#  'avg_rssi', 'avg_snr', ...]
+snr_feature_idx: 9        # Index of avg_snr feature
+load_feature_idx: 0       # Index of ue_count feature
+
+# ===== Targets =====
+target_pattern_score: 70.0      # Target pattern score (%)
+target_hourly_ue_range: 1.5     # Target hourly UE range
+target_ap_variance_ratio: [0.8, 1.2]  # Target AP variance ratio range
+target_snr_density_corr: -0.3   # Target SNR-density correlation
